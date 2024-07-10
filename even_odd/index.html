@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href=".styles.css">
+	
+	<title>Even_Odd</title>
+</head>
+<body>
+	<div id="game">
+		<div id="player1_element">
+			<p>Your total is: <span id="player1_score"></span></p>
+		</div>
+		<div id="player2_element">
+			<p>Opponent's total is: <span id="player2_score"></span></p>
+		</div>
+		<div id="game_board">
+			<div>
+				<p>
+					How many balls you choose? <span id="balls_amount_result"></span>
+				</p>
+				<input type="text" name="balls amount" id="balls_amount">
+				<button onclick="ballsAmountChosen()">OK</button>
+			</div>
+			<div>
+				<button id="even_button" onclick="evenWager()">even</button>
+				<button id="odd_button" onclick="oddWager()">odd</button>
+				<span>Your wager is: <strong><span id="current_wager"></span></strong></span>
+			</div>
+		</div>
+	</div>
+
+	<script src="./script.js"></script>
+</body>
+</html>
