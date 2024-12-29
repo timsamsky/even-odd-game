@@ -1,0 +1,24 @@
+body {
+	background-color: #699aab;
+}
+
+#game {
+	background: #eab8c8;
+	width: 90%;
+	max-width: 950px;
+	padding: 10px;
+}
+.container {
+	width: 80%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.row {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+}
+.col {
+	display: flex;
+	flex-flow: column wrap;  
+}
