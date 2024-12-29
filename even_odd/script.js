@@ -1,30 +1,25 @@
-// vars for players
-let player1 = 10;
-let player2 = 10;
-
-let player1Element = document.getElementById("player1_element");
-let player2Element = document.getElementById("player2_element");
-
-let player1Score = document.getElementById("player1_score");
-let player2Score = document.getElementById("player2_score");
-
-// vars for gameplay
-let maxWager;
+// lets
+let player = 10;
+let opponent = 10;
+let maxWager = 6;
 let playerWager;
-let gameWager;
-let currentWager = document.getElementById("current_wager");
 let evenOdd;
-let evenOddDisplay = document.getElementById("currrent_wager");
+
+// consts
+const playerElement = document.getElementById("player_element");
+const opponentElement = document.getElementById("opponent_element");
+
+const playerScore = document.getElementById("player_score");
+const opponentScore = document.getElementById("opponent_score");
+const currentWager = document.getElementById("current_wager");
+
+const evenOddDisplay = document.getElementById("currrent_wager");
 
 
 // first step (player 1 starts) 
-// pre-step
-player1Score.innerText = player1;
-player2Score.innerText = player2;
-
-//playerWager = +prompt("How many balls you chose?", 1);
-//evenOdd = prompt("OK - even, Cancel - odd", "OK - even, Cancel - odd");
-
+// initialize score
+playerScore.innerText = player;
+opponentScore.innerText = opponent;
 
 
 // setup wager
@@ -50,15 +45,6 @@ function oddWager() {
 }
 
 
-function chooseWager() {
-	if (evenOdd == null) {
-		evenOdd = false;
-	} else {
-		evenOdd = true;
-	}
-	return evenOdd;
-}
-
 // opponent auto-reply
 function opponentWager() {
 	function getRandom(max) {
@@ -67,29 +53,22 @@ function opponentWager() {
 	return getRandom(maxWager);
 }
 
-function opponentWagerEvenOdd() {
-	if (gameWager % 2 === 0) {
-		return true;
-	} else {
-		return false;
+// play button
+function gameBoardPlay() {
+	let oppW = opponentWager();
+	let opponentBalls = document.getElementById("opponent_balls");
+	opponentBalls.innerText = oppW;
+
+
+	function opponentWagerEvenOdd() {
+		if (oppW % 2 === 0) {
+			return "even";
+		} else {
+			return "odd";
+		}
 	}
+	let opponentEvenOddValue = document.getElementById("opponent_even_odd_value");
+	opponentEvenOddValue.innerText = opponentWagerEvenOdd();
+	
+	
 }
-
-function play() {
-	if (evenOdd === opponentWagerEvenOdd()) {
-		player1 + opponentWager();
-		player2 - opponentWager();
-		return;
-	} else {
-		player1 - opponentWager();
-		player2 + opponentWager();
-		return;
-	}
-	return;
-}
-
-//chooseWager();
-gameWager = opponentWager();
-opponentWagerEvenOdd();
-console.log(play());
-
